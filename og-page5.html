@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<meta
+			property="og:title"
+			content="Asuransi Bebas Handal Kesehatan Syariah"
+			data-react-helmet="true"
+		/>
+		<meta
+			property="og:description"
+			content="Asuransi Bebas Handal hadir dengan manfaat lengkap kesehatan mulai dari biaya tindakan bedah hingga manfaat tunai harian sesuai dengan prinsip syariah."
+			data-react-helmet="true"
+		/>
+		<meta
+			property="og:image"
+			content="/images/FWD Cancer Protection.jpg"
+			data-react-helmet="true"
+		/>
+		<script
+			src="https://kit.fontawesome.com/e9ffa5034d.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link
+			rel="stylesheet"
+			href="path/to/font-awesome/css/font-awesome.min.css"
+		/>
+
+		<link rel="stylesheet" href="/css/style.css" />
+		<style>
+			body {
+				background: url('/images/FWD Cancer Protection.jpg') center;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<div class="title">
+					<h1>Try Sharing</h1>
+				</div>
+				<div class="socialIcons">
+					<a href="#" class="icon1" target="_blank"
+						><span class="icon"
+							><i class="fa fa-facebook" aria-hidden="true"></i> </span
+					></a>
+					<a href="#" class="icon2" target="_blank"
+						><span class="icon"
+							><i class="fa fa-whatsapp" aria-hidden="true"></i></span
+					></a>
+					<a href="#" class="icon3" target="_blank"
+						><span class="icon"
+							><i class="fa fa-twitter" aria-hidden="true"></i></span
+					></a>
+				</div>
+			</div>
+		</div>
+		<a href="/" class="backButton"><i class="fa fa-chevron-left"></i></a>
+		<script>
+			const icon1 = document.querySelector('.icon1')
+			const icon2 = document.querySelector('.icon2')
+			const icon3 = document.querySelector('.icon3')
+			const whatsapp = 'https://api.whatsapp.com/send?text='
+			const twitter = 'https://twitter.com/intent/tweet?text='
+			const facebook = 'https://www.facebook.com/sharer.php?u='
+			const pageLink = window.location.toString()
+			const shareLink = (evt) => {
+				evt.preventDefault()
+				let finalUrl = ''
+
+				switch (evt.currentTarget.classList[0]) {
+					case 'icon1':
+						finalUrl = facebook + pageLink
+						break
+					case 'icon2':
+						finalUrl = whatsapp + pageLink
+						break
+					case 'icon3':
+						finalUrl = twitter + pageLink
+						break
+					default:
+						break
+				}
+				window.open(finalUrl, 'popup', 'width=600,height=600')
+			}
+			icon1.addEventListener('click', shareLink)
+			icon2.addEventListener('click', shareLink)
+			icon3.addEventListener('click', shareLink)
+		</script>
+	</body>
+</html>
